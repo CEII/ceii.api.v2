@@ -11,6 +11,7 @@ You need to have installed:
 
 ## Installation Steps
 - Clone project and fetch develop branch
+- If you're using IDE, then run project with it, else check [commands section](#commands-to-run-solution-in-code-editor)
 
 ## Commands
 
