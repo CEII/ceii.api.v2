@@ -4,8 +4,10 @@
 
 You need to have installed:
 - [WSL2](https://aka.ms/wsl2) with Ubuntu 20.04 (Ubuntu downloaded from MS Store)
-- [.NET 6](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2110-) SDK and ASP.NET Core Runtime
-- [EF Core CLI](https://docs.microsoft.com/en-us/ef/core/cli/dotnet)
+- [.NET 6](https://docs.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#2110-) SDK and ASP.NET Core Runtime for WSL2
+- [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) SDK and ASP.NET Core Runtime for Windows
+- [EF Core CLI](https://docs.microsoft.com/en-us/ef/core/cli/dotnet) for WSL2
+- [EF Core CLI](https://docs.microsoft.com/en-us/ef/core/cli/dotnet#installing-the-tools) for Windows
 - [Docker](https://docs.docker.com/desktop/windows/wsl/)
 - Any .NET IDE or Code Editor (preferably [Rider](https://www.jetbrains.com/rider/))
 
@@ -22,7 +24,7 @@ You need to have installed:
   ```
 
 ### Commands to run solution in Code Editor
-These are **not needed** when using .NET IDE
+These are **not needed** when using .NET IDE. Run them in WSL2 bash.
 
 - Run project in watch mode (from root directory)
     ```bash
@@ -44,7 +46,7 @@ These are **not needed** when using .NET IDE
 
 ### Commands for EF Core
 EF Core commands need flags in order to work properly, if you're inside root directory, then you always
-have to add `--project src/Ceii.Api.Data` flag at the end.
+have to add `--project src/Ceii.Api.Data` flag at the end. You can run this in WSL2 or Powershell.
 
 - Create migration
   ```bash
