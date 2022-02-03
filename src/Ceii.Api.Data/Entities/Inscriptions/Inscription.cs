@@ -9,7 +9,7 @@ public class Inscription
     
     public List<User>? User { get; set; }
     
-    public List<Activity>? Activity { get; set; }
+    // public List<Activity>? Activity { get; set; }
     
     public DateTime? CreatedAt { get; set; }
 }
