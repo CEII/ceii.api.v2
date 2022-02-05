@@ -15,4 +15,6 @@ public class User
     public Role? Role { get; set; }
     
     public Guid? PasswordRecovery { get; set; }
+
+    
 }

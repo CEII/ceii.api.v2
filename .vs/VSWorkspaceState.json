@@ -2,7 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\Ceii.Api.Core"
+    "\\src\\Ceii.Api.Application",
+    "\\tests"
   ],
+  "SelectedNode": "\\Ceii.Api.sln",
   "PreviewInSolutionExplorer": false
 }

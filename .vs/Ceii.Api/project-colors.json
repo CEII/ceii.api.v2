@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "6585f716-df36-4aac-946e-5d271311a57b": {
+      "ProjectGuid": "6585f716-df36-4aac-946e-5d271311a57b",
+      "DisplayName": "Ceii.Api.Core",
+      "ColorIndex": 0
+    },
+    "c235f750-a4ed-44ed-8f91-42f734fd38ab": {
+      "ProjectGuid": "c235f750-a4ed-44ed-8f91-42f734fd38ab",
+      "DisplayName": "Ceii.Api.Data",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

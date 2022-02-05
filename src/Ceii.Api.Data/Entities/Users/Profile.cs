@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ceii.Api.Data.Entities.Users;
 
-namespace Ceii.Api.Data.Entities.Profile
+namespace Ceii.Api.Data.Entities.New;
+
+public class Profile
 {
-    internal class Profile
-    {
-    }
+    public int Id { get; set; }
+    public string? Occupation { get; set; }
+    public string? Description { get; set; }
+    public User? UserEmail { get; set; }
+
 }
