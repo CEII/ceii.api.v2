@@ -1,6 +1,6 @@
-﻿using AutoMapper;
-using Ceii.Api.Application.Services.Users.ViewModels;
+﻿using Ceii.Api.Application.Services.Users.ViewModels;
 using Ceii.Api.Data.Entities.Users;
+using Profile = AutoMapper.Profile;
 
 namespace Ceii.Api.Application.Services.Users;
 
