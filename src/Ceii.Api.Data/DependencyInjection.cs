@@ -8,11 +8,11 @@ namespace Ceii.Api.Data;
 
 public static class DependencyInjection
 {
-    public static void AddDataLayer(this IServiceCollection services, IConfiguration configuration)
+    public static void AddDataLayer(this IServiceCollection services, IConfiguration configuration, string? envDb)
     {
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(
-                configuration.GetConnectionString("DefaultConnection").BuildConnectionString(),
+                envDb ?? configuration.GetConnectionString("DefaultConnection").BuildConnectionString(),
                 b => 
                     b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)
             )

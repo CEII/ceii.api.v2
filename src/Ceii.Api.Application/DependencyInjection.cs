@@ -15,10 +15,10 @@ public static class DependencyInjection
         services.AddTransient<IUserRepository, UserRepository>();
     }
     
-    public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
+    public static void AddApplication(this IServiceCollection services, IConfiguration configuration, string? envDb)
     {
         services.AddAutoMapper(Assembly.Load("Ceii.Api.Application"));
-        services.AddDataLayer(configuration);
+        services.AddDataLayer(configuration, envDb);
 
         services.AddRepositories();
 

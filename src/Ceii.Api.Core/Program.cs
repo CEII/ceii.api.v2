@@ -21,7 +21,7 @@ builder.Services.AddControllers()
         });
     });
 
-builder.Services.AddApplication(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration, Environment.GetEnvironmentVariable("DATABASE_URL"));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
