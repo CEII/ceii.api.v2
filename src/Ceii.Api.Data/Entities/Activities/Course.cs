@@ -1,4 +1,4 @@
-﻿using Ceii.Api.Data.Entities.Activity;
+﻿namespace Ceii.Api.Data.Entities.Activities;
 
 public class Course : Activity
 {

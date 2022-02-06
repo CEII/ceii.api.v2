@@ -1,4 +1,4 @@
-﻿namespace Ceii.Api.Data.Entities.Category;
+﻿namespace Ceii.Api.Data.Entities.Activities;
 
 public class Category
 {

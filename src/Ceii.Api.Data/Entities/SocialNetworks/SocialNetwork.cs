@@ -1,6 +1,6 @@
 ﻿using Ceii.Api.Data.Entities.Users;
 
-namespace Ceii.Api.Data.Entities.socialNetwork;
+namespace Ceii.Api.Data.Entities.SocialNetworks;
 
 public class SocialNetwork
 {

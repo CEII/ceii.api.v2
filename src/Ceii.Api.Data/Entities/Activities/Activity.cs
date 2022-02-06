@@ -1,4 +1,6 @@
-﻿namespace Ceii.Api.Data.Entities.Activity;
+﻿using Ceii.Api.Data.Enums;
+
+namespace Ceii.Api.Data.Entities.Activities;
 
 public class Activity
 {
@@ -12,13 +14,9 @@ public class Activity
 
     public bool? Enabled { get; set; }
 
-    public enum Mode
-    {
-        Online,
-        Classroom
-    }
+    public ActivityModeEnum? Mode { get; set; }
 
     public string? InvitationLink { get; set; }
 
-    public Category.Category? CategoryId { get; set; }
+    public Category? CategoryId { get; set; }
 }

@@ -1,6 +1,6 @@
 ﻿using Ceii.Api.Data.Entities.Users;
 
-namespace Ceii.Api.Data.Entities.New;
+namespace Ceii.Api.Data.Entities.News;
 
 public class New
 {

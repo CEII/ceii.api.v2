@@ -1,6 +1,6 @@
 ﻿using Ceii.Api.Data.Entities.Users;
 
-namespace Ceii.Api.Data.Entities.Developer;
+namespace Ceii.Api.Data.Entities.Developers;
 
 public class Developer
 {
