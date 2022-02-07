@@ -1,4 +1,5 @@
-﻿using Ceii.Api.Data.Entities.Users;
+﻿using Ceii.Api.Data.Entities.Inscriptions;
+using Ceii.Api.Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Profile = AutoMapper.Profile;
 
@@ -12,5 +13,7 @@ public interface IApplicationDbContext
     
     DbSet<Profile> Profiles { get; set; }
 
+    DbSet<Inscription>? Inscriptions { get; set; }
+    
     Task<int> SaveChangesAsync(CancellationToken? cancellationToken);
 }
