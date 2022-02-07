@@ -29,4 +29,8 @@
       <ProjectReference Include="..\Ceii.Api.Data\Ceii.Api.Data.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Services\Inscriptions\ViewModels" />
+    </ItemGroup>
+
 </Project>
