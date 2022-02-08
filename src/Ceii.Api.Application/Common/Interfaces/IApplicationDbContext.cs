@@ -1,4 +1,5 @@
-﻿using Ceii.Api.Data.Entities.Inscriptions;
+﻿using Ceii.Api.Data.Entities.Activities;
+using Ceii.Api.Data.Entities.Inscriptions;
 using Ceii.Api.Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
 using Profile = AutoMapper.Profile;

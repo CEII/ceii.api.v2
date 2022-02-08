@@ -12,27 +12,27 @@ public class ActivityRepository : IActivityRepository
     {
         _ctx = ctx;
     }
-    public Task<IList<Inscription>> GetAll()
+    public Task<IList<Activity>> GetAll()
     {
         throw new NotImplementedException();
     }
 
-    public Task<Inscription> GetById(object id)
+    public Task<Activity> GetById(object id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Inscription> Insert(Inscription t)
+    public Task<Activity> Insert(Activity t)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Inscription> Delete(object id)
+    public Task<Activity> Delete(object id)
     {
         throw new NotImplementedException();
     }
 
-    public Task<Inscription> Update(Inscription t)
+    public Task<Activity> Update(Activity t)
     {
         throw new NotImplementedException();
     }
