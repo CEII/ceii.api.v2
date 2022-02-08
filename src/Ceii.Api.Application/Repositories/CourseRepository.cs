@@ -4,7 +4,7 @@ using Ceii.Api.Data.Entities.Activities;
 
 namespace Ceii.Api.Application.Repositories;
 
-public class CourseRepository:ICourseRepository
+public class CourseRepository : ICourseRepository
 {
     public Task<IList<Course>> GetAll()
     {
