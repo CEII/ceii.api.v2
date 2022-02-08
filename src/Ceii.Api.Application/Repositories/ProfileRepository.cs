@@ -1,6 +1,9 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Profiles;
 using Ceii.Api.Data.Entities.Users;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.EntityFrameworkCore;
+using UserProfile = Ceii.Api.Data.Entities.Users.Profile;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -12,9 +15,12 @@ public class ProfileRepository : IProfileRepository
     {
         _ctx = ctx;
     }
-    public Task<IList<Profile>> GetAll()
+    
+    public async Task<IList<Profile>> GetAll()
     {
-        throw new NotImplementedException();
+        var profiles = await _ctx.Profiles.ToListAsync();
+
+        return profiles;
     }
 
     public Task<Profile> GetById(object id)
