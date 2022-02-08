@@ -14,6 +14,8 @@ public interface IApplicationDbContext
     DbSet<Profile> Profiles { get; set; }
 
     DbSet<Inscription>? Inscriptions { get; set; }
+
+    DbSet<Activity> Activities { get; set; }
     
     Task<int> SaveChangesAsync(CancellationToken? cancellationToken);
 }

@@ -15,6 +15,8 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Inscription>? Inscriptions { get; set; }
 
+    public DbSet<Activity>? Activities { get; set; }
+
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
