@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Ceii.Api.Data.Entities.Activities;
+using Ceii.Api.Data.Entities.Developers;
 using Ceii.Api.Data.Entities.Inscriptions;
 using Ceii.Api.Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
@@ -8,15 +9,17 @@ namespace Ceii.Api.Data.Context;
 
 public class ApplicationDbContext : DbContext
 {
-    public DbSet<User>? Users { get; set; }
+    public DbSet<User> Users => Set<User>();
     
-    public DbSet<Role>? Roles { get; set; }
-    
-    public DbSet<Profile>? Profiles { get; set; }
+    public DbSet<Role> Roles => Set<Role>();
 
-    public DbSet<Inscription>? Inscriptions { get; set; }
+    public DbSet<Profile> Profiles => Set<Profile>();
 
-    public DbSet<Activity>? Activities { get; set; }
+    public DbSet<Inscription> Inscriptions => Set<Inscription>();
+
+    public DbSet<Developer> Developers => Set<Developer>();
+
+    public DbSet<Activity> Activities => Set<Activity>();
 
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
