@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
+using Ceii.Api.Application.Contracts.Profiles;
 using Ceii.Api.Application.Contracts.Users;
 using Ceii.Api.Application.Repositories;
+using Ceii.Api.Application.Services.Profiles;
 using Ceii.Api.Application.Services.Users;
 using Ceii.Api.Data;
 using Microsoft.Extensions.Configuration;
@@ -13,6 +15,7 @@ public static class DependencyInjection
     private static void AddRepositories(this IServiceCollection services)
     {
         services.AddTransient<IUserRepository, UserRepository>();
+        services.AddTransient<IProfileRepository, ProfileRepository>();
     }
     
     public static void AddApplication(this IServiceCollection services, IConfiguration configuration, string? envDb)
@@ -23,5 +26,6 @@ public static class DependencyInjection
         services.AddRepositories();
 
         services.AddTransient<UserService>();
+        services.AddTransient<ProfileService>();
     }
 }

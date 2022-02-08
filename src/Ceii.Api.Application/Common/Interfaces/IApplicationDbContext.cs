@@ -3,7 +3,7 @@ using Ceii.Api.Data.Entities.Activities;
 using Ceii.Api.Data.Entities.Inscriptions;
 using Ceii.Api.Data.Entities.Users;
 using Microsoft.EntityFrameworkCore;
-using Profile = AutoMapper.Profile;
+using Profile = Ceii.Api.Data.Entities.Users.Profile;
 
 namespace Ceii.Api.Application.Common.Interfaces;
 
