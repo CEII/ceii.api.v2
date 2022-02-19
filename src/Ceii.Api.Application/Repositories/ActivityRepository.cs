@@ -1,6 +1,7 @@
 using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Activities;
 using Ceii.Api.Data.Entities.Activities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -12,9 +13,10 @@ public class ActivityRepository : IActivityRepository
     {
         _ctx = ctx;
     }
-    public Task<IList<Activity>> GetAll()
+    public async Task<IList<Activity>> GetAll()
     {
-        throw new NotImplementedException();
+        var activities = await _ctx.Activities.ToListAsync();
+        return activities;
     }
 
     public Task<Activity> GetById(object id)
