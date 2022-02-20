@@ -21,4 +21,11 @@ public class ProfileController : ControllerBase
         var profiles = await _service.GetAll();
         return Ok(profiles);
     }
+    
+    [HttpGet("{id:string}")]
+    public async Task<ActionResult<ProfileVm>> GetProfileById(string id)
+    {
+        var profile = await _service.GetById(id);
+        return profile is null ? NotFound() : Ok(profile);
+    }
 }
