@@ -1,6 +1,7 @@
 using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Activities;
 using Ceii.Api.Data.Entities.Activities;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -22,9 +23,24 @@ public class ActivityRepository : IActivityRepository
         throw new NotImplementedException();
     }
 
-    public Task<Activity> Insert(Activity t)
+    public async Task<Activity> Insert(Activity t)
     {
-        throw new NotImplementedException();
+        var activity = new Activity()
+        {
+            Id = new Activity().Id,
+            Title = new Activity().Title,
+            Description = new Activity().Description,
+            Quota = new Activity().Quota,
+            Enabled = new Activity().Enabled,
+            Mode = new Activity().Mode,
+            InvitationLink = new Activity().InvitationLink,
+            CategoryId = new Activity().CategoryId
+        };
+
+        _ctx.Activities.Add(activity);
+        await _ctx.SaveChangesAsync(null);
+        
+        return activity;
     }
 
     public Task<Activity> Delete(object id)
