@@ -1,6 +1,7 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Developers;
 using Ceii.Api.Data.Entities.Developers;
+using Ceii.Api.Data.Entities.Inscriptions;
 
 namespace Ceii.Api.Application.Repositories;
 

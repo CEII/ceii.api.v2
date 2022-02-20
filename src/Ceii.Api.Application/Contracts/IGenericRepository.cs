@@ -1,4 +1,6 @@
-﻿namespace Ceii.Api.Application.Contracts;
+﻿using Ceii.Api.Data.Entities.Inscriptions;
+
+namespace Ceii.Api.Application.Contracts;
 
 public interface IGenericRepository<T> where T : class
 {

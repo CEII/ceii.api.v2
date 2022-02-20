@@ -1,6 +1,7 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Inscriptions;
 using Ceii.Api.Data.Entities.Inscriptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -27,9 +28,12 @@ public class InscriptionRepository : IInscriptionRepository
         throw new NotImplementedException();
     }
 
-    public Task<Inscription> Delete(object id)
+    public async Task<Inscription> Delete(object id)
     {
-        throw new NotImplementedException();
+        var ins = await _ctx.Inscriptions.Where(ins => ins.User.Email.Equals(id)).FirstOrDefaultAsync();
+        _ctx.Inscriptions.Remove(ins);
+        await _ctx.SaveChangesAsync(CancellationToken.None);
+        return ins;
     }
 
     public Task<Inscription> Update(Inscription t)

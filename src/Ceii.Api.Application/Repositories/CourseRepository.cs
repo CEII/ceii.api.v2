@@ -1,6 +1,7 @@
 ﻿
 using Ceii.Api.Application.Contracts.Courses;
 using Ceii.Api.Data.Entities.Activities;
+using Ceii.Api.Data.Entities.Inscriptions;
 
 namespace Ceii.Api.Application.Repositories;
 
