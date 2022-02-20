@@ -1,5 +1,6 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Profiles;
+using Ceii.Api.Data.Entities.Inscriptions;
 using Ceii.Api.Data.Entities.Users;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.EntityFrameworkCore;
