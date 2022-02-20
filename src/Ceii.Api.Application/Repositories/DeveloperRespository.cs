@@ -1,6 +1,7 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Developers;
 using Ceii.Api.Data.Entities.Developers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -15,9 +16,10 @@ public class DeveloperRespository : IDeveloperRepository
     }
 
 
-    public Task<IList<Developer>> GetAll()
+    public async Task<IList<Developer>> GetAll()
     {
-        throw new NotImplementedException();
+        var devs = await _ctx.Developers.ToListAsync();
+        return devs; 
     }
 
     public Task<Developer> GetById(object id)
