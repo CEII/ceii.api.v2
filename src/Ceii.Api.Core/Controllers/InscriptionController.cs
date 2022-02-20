@@ -1,4 +1,4 @@
-﻿using Ceii.Api.Application.Services.Developers;
+﻿using Ceii.Api.Application.Services.Inscriptions;
 using Ceii.Api.Application.Services.Inscriptions.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,11 +6,11 @@ namespace Ceii.Api.Core.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class DeveloperController : ControllerBase
+public class InscriptionController : ControllerBase
 {
-    private readonly DevelopersServices _service;
+    private readonly InscriptionService _service;
 
-    public DeveloperController(DevelopersServices service)
+    public InscriptionController(InscriptionService service)
     {
         _service = service;
     }
@@ -18,7 +18,7 @@ public class DeveloperController : ControllerBase
     [HttpDelete]
     public async Task<ActionResult> Delete(string id)
     {
-        var dev = await _service.Delete(id);
-        return dev is null ? NotFound() : Ok();
+        var ins = await _service.Delete(id);
+        return ins is null ? NotFound() : Ok(ins);
     }
 }

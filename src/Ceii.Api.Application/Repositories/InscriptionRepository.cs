@@ -30,7 +30,7 @@ public class InscriptionRepository : IInscriptionRepository
 
     public async Task<Inscription> Delete(object id)
     {
-        var ins = await _ctx.Inscriptions.Where(ins => ins.User.Email.Equals(id)).FirstOrDefaultAsync();
+        var ins = await _ctx.Inscriptions.Where(ins => ins.User!.Email.Equals(id)).FirstOrDefaultAsync();
         _ctx.Inscriptions.Remove(ins);
         await _ctx.SaveChangesAsync(CancellationToken.None);
         return ins;
