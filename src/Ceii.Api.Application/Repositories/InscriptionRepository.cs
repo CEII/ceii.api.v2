@@ -1,6 +1,7 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Inscriptions;
 using Ceii.Api.Data.Entities.Inscriptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -12,9 +13,10 @@ public class InscriptionRepository : IInscriptionRepository
     {
         _ctx = ctx;
     }
-    public Task<IList<Inscription>> GetAll()
+    public async Task<IList<Inscription>> GetAll()
     {
-        throw new NotImplementedException();
+        var inscriptions = await _ctx.Inscriptions.ToListAsync();
+        return inscriptions;
     }
 
     public Task<Inscription> GetById(object id)
