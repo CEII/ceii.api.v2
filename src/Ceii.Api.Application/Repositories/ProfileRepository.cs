@@ -23,9 +23,10 @@ public class ProfileRepository : IProfileRepository
         return profiles;
     }
 
-    public Task<Profile> GetById(object id)
+    public async Task<Profile> GetById(object id)
     {
-        throw new NotImplementedException();
+        var profiles = await _ctx.Profiles.Where(prof => prof.UserEmail.Equals(id)).FirstOrDefaultAsync();
+        return profiles;
     }
 
     public Task<Profile> Insert(Profile t)
