@@ -1,6 +1,7 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Developers;
 using Ceii.Api.Data.Entities.Developers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -20,9 +21,10 @@ public class DeveloperRespository : IDeveloperRepository
         throw new NotImplementedException();
     }
 
-    public Task<Developer> GetById(object id)
+    public async Task<Developer> GetById(object id)
     {
-        throw new NotImplementedException();
+        var dev = await _ctx.Developers.Where(dev => dev.User.Email.Equals(id)).FirstOrDefaultAsync();
+        return dev;
     }
 
     public Task<Developer> Insert(Developer t)
