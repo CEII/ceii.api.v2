@@ -27,9 +27,12 @@ public class ActivityRepository : IActivityRepository
         throw new NotImplementedException();
     }
 
-    public Task<Activity> Delete(object id)
+    public async Task<Activity> Delete(object id)
     {
-        throw new NotImplementedException();
+        var activity = _ctx.Activities.FirstOrDefault(activity => activity.Id.Equals(id));
+        _ctx.Activities.Remove(activity);
+        await _ctx.SaveChangesAsync(CancellationToken.None);
+        return activity;
     }
 
     public Task<Activity> Update(Activity t)
