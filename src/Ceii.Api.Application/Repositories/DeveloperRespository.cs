@@ -1,6 +1,7 @@
 ﻿using Ceii.Api.Application.Common.Interfaces;
 using Ceii.Api.Application.Contracts.Developers;
 using Ceii.Api.Data.Entities.Developers;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ceii.Api.Application.Repositories;
 
@@ -25,10 +26,22 @@ public class DeveloperRespository : IDeveloperRepository
         throw new NotImplementedException();
     }
 
-    public Task<Developer> Insert(Developer t)
+    public async  Task<Developer> Insert(Developer t)
     {
-        throw new NotImplementedException();
+        var dev =  new Developer()
+        {
+            Id=t.Id,
+            User=t.User,
+            Participation = t.Participation,
+            AddedAt = t.AddedAt
+        };
+        
+        _ctx.Developers.Add(dev);
+        await _ctx.SaveChangesAsync(null);
+
+        return dev; 
     }
+    
 
     public Task<Developer> Delete(object id)
     {
