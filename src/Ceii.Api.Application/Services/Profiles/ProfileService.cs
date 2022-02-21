@@ -21,4 +21,10 @@ public class ProfileService
         var profiles = await _repository.GetAll();
         return _mapper.Map<IList<UserProfile>, IList<ProfileVm>>(profiles);
     }
+
+    public async Task<ProfileVm> Insert(UserProfile p)
+    {
+        var profile = await _repository.Insert(p);
+        return _mapper.Map<UserProfile, ProfileVm>(profile);
+    }
 }
