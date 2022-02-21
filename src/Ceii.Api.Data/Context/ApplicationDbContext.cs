@@ -21,6 +21,8 @@ public class ApplicationDbContext : DbContext
 
     public DbSet<Activity> Activities => Set<Activity>();
 
+    public DbSet<Course> Courses => Set<Course>();
+
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
