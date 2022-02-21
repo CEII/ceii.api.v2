@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Ceii.Api.Application.Contracts.Developers;
@@ -18,7 +19,6 @@ public class DeveloperService_Delete
     private IMapper _mapper = null!;
     private IDeveloperRepository _repository = null!;
 
-
     [SetUp]
     public void Setup()
     {
@@ -29,7 +29,6 @@ public class DeveloperService_Delete
                 cfg.AddProfile(new DeveloperMappings());
             })
         );
-
 
         _repository = Substitute.For<IDeveloperRepository>();
     }
@@ -50,8 +49,14 @@ public class DeveloperService_Delete
         // Act
         var result = await service.Delete("00024680@uca.edu.sv");
 
+        var dev = devs.Where(dev => dev.User!.Email.Equals("00024680@uca.edu.sv")).FirstOrDefault();
+        devs.Remove(dev);
+
         // Assert
         result.Should().NotBeNull().And.BeOfType<Developer>();
+
+        var length = devs.Count();
+        devs.Should().HaveCount(length).And.NotContain(dev);
     }
 
     [Test]
