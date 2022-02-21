@@ -21,5 +21,7 @@ public interface IApplicationDbContext
 
     DbSet<Activity> Activities { get; set; }
     
+    DbSet<Course> Courses { get; set; }
+
     Task<int> SaveChangesAsync(CancellationToken? cancellationToken);
 }
