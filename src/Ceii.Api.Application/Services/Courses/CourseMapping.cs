@@ -1,6 +1,14 @@
-﻿namespace Ceii.Api.Application.Services.Courses;
+﻿using AutoMapper;
+using Ceii.Api.Application.Services.Courses.ViewModel;
+using Ceii.Api.Data.Entities.Activities;
 
-public class CourseMapping
+namespace Ceii.Api.Application.Services.Courses;
+
+public class CourseMappings : Profile
 {
-    
+    public CourseMappings()
+    {
+        CreateMap<Course, CourseVm>();
+        CreateMap<CourseVm, Course>();
+    }
 }
