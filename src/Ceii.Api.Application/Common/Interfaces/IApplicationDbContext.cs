@@ -20,6 +20,8 @@ public interface IApplicationDbContext
     DbSet<Developer> Developers { get; set; }
 
     DbSet<Activity> Activities { get; set; }
+
+    DbSet<Course> Courses { get; set; }
     
     Task<int> SaveChangesAsync(CancellationToken? cancellationToken);
 }
