@@ -20,7 +20,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Developer> Developers => Set<Developer>();
 
     public DbSet<Activity> Activities => Set<Activity>();
-
+    
+    public DbSet<Course> Courses => Set<Course>();
     public ApplicationDbContext(DbContextOptions options) : base(options)
     {
     }
