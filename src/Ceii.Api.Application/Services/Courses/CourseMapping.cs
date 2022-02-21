@@ -1,6 +1,8 @@
-﻿namespace Ceii.Api.Application.Services.Courses;
+﻿using AutoMapper;
 
-public class CourseMapping
+namespace Ceii.Api.Application.Services.Courses;
+
+public class CourseMapping : Profile
 {
     
 }
