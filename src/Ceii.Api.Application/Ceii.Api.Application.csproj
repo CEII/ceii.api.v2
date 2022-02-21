@@ -33,8 +33,4 @@
       <Folder Include="Services\Inscriptions\ViewModels" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Services\Activities\ViewModels" />
-    </ItemGroup>
-
 </Project>
