@@ -32,7 +32,7 @@ public class CourseRepository : ICourseRepository
     {
         var course = await _ctx.Courses.Where(course => course.Id.Equals(id)).FirstOrDefaultAsync();
         _ctx.Courses.Remove(course);
-        await _ctx.SaveChangesAsync(CancellationToken.None);
+        await _ctx.SaveChangesAsync();
         return course;
     }
 

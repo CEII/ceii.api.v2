@@ -17,7 +17,6 @@ public class CourseService_Delete
     private IMapper _mapper = null!;
     private ICourseRepository _repository = null!;
 
-
     [SetUp]
     public void Setup()
     {
@@ -28,12 +27,11 @@ public class CourseService_Delete
             })
         );
 
-
         _repository = Substitute.For<ICourseRepository>();
     }
 
     [Test]
-    public async Task Delete_ShouldDelete_WhenDeveloperIsFound()
+    public async Task Delete_ShouldDelete_WhenCourseIsFound()
     {
         // Arrange
         var courses = new List<Course>()
@@ -48,12 +46,18 @@ public class CourseService_Delete
         // Act
         var result = await service.Delete(3);
 
+        var course = courses.Where(course => course.Id.Equals(3)).FirstOrDefault();
+        courses.Remove(course);
+
         // Assert
         result.Should().NotBeNull().And.BeOfType<Course>();
+
+        var length = courses.Count();
+        courses.Should().HaveCount(length).And.NotContain(course);
     }
 
     [Test]
-    public async Task Delete_ShouldReturnNull_WhenDeveloperIsNotFound()
+    public async Task Delete_ShouldReturnNull_WhenCourseIsNotFound()
     {
         // Arrange
         _repository.Delete(Arg.Any<int>()).ReturnsNull();

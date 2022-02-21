@@ -17,7 +17,7 @@ public class CourseService
 
     public async Task<Course> Delete(int id)
     {
-        var dev = await _repository.Delete(id);
-        return dev;
+        var course = await _repository.Delete(id);
+        return course;
     }
 }
