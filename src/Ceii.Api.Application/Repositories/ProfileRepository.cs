@@ -28,9 +28,20 @@ public class ProfileRepository : IProfileRepository
         throw new NotImplementedException();
     }
 
-    public Task<Profile> Insert(Profile t)
+    public async Task<Profile> Insert(Profile t)
     {
-        throw new NotImplementedException();
+        var profile = new Profile()
+        {
+            Description = t.Description,
+            Id = t.Id,
+            Occupation = t.Occupation,
+            UserEmail = t.UserEmail
+        };
+
+        _ctx.Profiles.Add(profile);
+        await _ctx.SaveChangesAsync(null);
+
+        return profile;
     }
 
     public Task<Profile> Delete(object id)
