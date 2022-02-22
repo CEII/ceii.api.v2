@@ -22,9 +22,19 @@ public class InscriptionRepository : IInscriptionRepository
         throw new NotImplementedException();
     }
 
-    public Task<Inscription> Insert(Inscription t)
+    public async  Task<Inscription> Insert(Inscription t)
     {
-        throw new NotImplementedException();
+        var ins = new Inscription()
+        {
+            Id = t.Id,
+            User = t.User,
+            CreatedAt = t.CreatedAt
+        };
+        _ctx.Inscriptions.Add(ins);
+
+        await _ctx.SaveChangesAsync(null);
+        return ins;
+
     }
 
     public Task<Inscription> Delete(object id)
